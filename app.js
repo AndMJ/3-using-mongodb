@@ -47,14 +47,31 @@ result.then((r) => {
     console.log("error!", e)
 })*/
 
+/*
 const getCoursesList = async () => {
-    return Course.find({author: "André", tags: "react"})
-        .limit(10)
-        .sort({name: 1})
+    return Course.find()
 }
 
 getCoursesList().then((result) => {
     console.log("Course list:", result)
 }).catch(error => {
     console.log("get error!",error)
+})*/
+
+const updateCourseByID = async (id) => {
+    const course = await Course.findById(id)
+    if (!course){
+        return
+    }
+
+    //course.name = "new name"
+    course.author = "Shiven"
+
+    return await course.save()
+}
+
+updateCourseByID("67488a426cc58dc3ceb567c").then((result) => {
+    console.log("UPDATED", result)
+}).catch(e => {
+    console.log("ERROR UPDATING", e.reason)
 })
