@@ -1,3 +1,13 @@
+### Assignment 3: MongoDB CRUD Operation: Exercise 1
+I want you to write a program and get all the published backend courses in a new database. Sort them by their name and pick only their name and author properties. Display them on the console.
+
+### Assignment 4: MongoDB CRUD Operation: Exercise 2
+I want you to get all the published frontend and backend courses. Sort them by their price in a descending order from most expensive to least expensive. Pick only their name and author and display them on the console.
+
+### Assignment 5: MongoDB CRUD Operation: Exercise 3
+I want you to get all the published courses that are $15 or more OR have the word 'by' in their title.
+
+## DOCS
 ### Mongoose comparison operators
     eq - equal
     ne - not equal
