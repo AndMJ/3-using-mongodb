@@ -58,7 +58,9 @@ getCoursesList().then((result) => {
     console.log("get error!",error)
 })*/
 
-const updateCourseByID = async (id) => {
+
+//query then update
+/*const updateCourseByID = async (id) => {
     const course = await Course.findById(id)
     if (!course){
         return
@@ -70,8 +72,36 @@ const updateCourseByID = async (id) => {
     return await course.save()
 }
 
-updateCourseByID("67488a426cc58dc3ceb567c").then((result) => {
+updateCourseByID("67488a426cc58dc3ceb5671c").then((result) => {
     console.log("UPDATED", result)
 }).catch(e => {
     console.log("ERROR UPDATING", e.reason)
+})*/
+
+
+//update on database directly, without query
+//works like PATCH
+/*const updateCourseDirectly = async (id) => {
+    return Course.findByIdAndUpdate(id, {
+        $set: {
+            author: "Zé"
+        }
+    })
+}
+
+updateCourseDirectly("67488a426cc58dc3ceb5671c").then(result => {
+    console.log("UPDATED", result)
+}).catch(e => {
+    console.log("ERROR DIRECTLY UPDATING", e.reason)
+})*/
+
+const deleteCourseDirectly = async (id) => {
+    return Course.findByIdAndDelete(id)
+}
+
+deleteCourseDirectly("67488a426cc58dc3ceb5671c").then(result => {
+    console.log("DELETED", result)
+}).catch(e => {
+    console.log("ERROR DIRECTLY DELETING", e.reason)
 })
+
